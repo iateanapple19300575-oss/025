@@ -1,0 +1,11 @@
+xcopy "$(TargetDir)*.*" "$(SolutionDir)Deploy\" /D /Y
+
+if not exist "$(SolutionDir)Deploy\ja" mkdir "$(SolutionDir)Deploy\ja"
+xcopy "$(TargetDir)\ja\*.*"  "$(SolutionDir)\Deploy\ja\" /D /Y
+
+if not exist "$(SolutionDir)Deploy\resources" mkdir "$(SolutionDir)Deploy\resources"
+
+xcopy "$(ProjectDir)resources\image\*.*" "$(SolutionDir)Deploy\resources\" /D /Y
+xcopy "$(ProjectDir)resources\template\*.*" "$(SolutionDir)Deploy\" /D /Y
+
+del "$(SolutionDir)Deploy\*.tmp"
