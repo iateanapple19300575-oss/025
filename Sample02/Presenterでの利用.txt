@@ -1,0 +1,11 @@
+Dim msg As New AppMessage()
+
+msg.MessageId = ErrorCodes.Timeout
+
+msg.Target = _
+    "顧客コード:C00001"
+
+msg.ActionMessage = _
+    "しばらく時間をおいて再実行してください。"
+
+MessageManager.ShowError(msg)
